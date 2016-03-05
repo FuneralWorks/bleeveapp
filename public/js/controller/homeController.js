@@ -7,7 +7,7 @@ function homeController($scope, GAuth, GApi, $location, $rootScope, GData){
     var ifLogin = function() {
         $rootScope.currentUser = GData.getUserId();
         console.log($rootScope);
-        $location.path("/home");
+        $location.path("/meetingRoom");
     };
 
     $scope.doLogin = function(){

@@ -5,7 +5,7 @@ function meetingRoom() {
         templateUrl: 'templates/room.html',
         restrict: 'E',
         scope: {
-            room: '='
+            roomName: '='
         },
         controller: roomController
 
@@ -13,9 +13,11 @@ function meetingRoom() {
 
 }
 
-roomController.$inject = ['$scope'];
+roomController.$inject = ['$scope', '$http', 'roomService'];
 
-function roomController($scope) {
-    $scope.color = 'blue';
-    console.log($scope);
+function roomController($scope, $http, roomService) {
+    roomService.getRoom($scope.roomName).then(function (res) {
+        console.log(res);
+    });
+
 }

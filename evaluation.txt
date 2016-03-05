@@ -1,0 +1,11 @@
+I would give me a 7 out of 10 for the product and a 5 out of 10 on my process. I would have liked to track my time better.
+The hard parts were:
+    -communicating with the API
+    -trying to make it persistent but I'm not really good in backend
+
+Surprising things:
+    -I spend a lot of time planning out instead of coding which explains lack of commit.
+
+I would take more time to think about the problems and plan out more efficiently.
+
+Nathan Calvarin

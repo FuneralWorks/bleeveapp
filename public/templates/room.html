@@ -1,5 +1,12 @@
-<div class="">
-    <header>Booked by {{}}</header>
-    <h1>{{roomName}}</h1>
-    <button class="button is-primary" ng-click="handleBooking()"></button>
+<div class="is-info notification">
+    <header ng-if="booked">Booked by {{room.event.summary}}</header>
+    <h1>{{room.calendar.summary}}</h1>
+    <button class="button is-primary" ng-click="handleBooking()">
+        <p ng-if="booked">
+            Unbook
+        </p>
+        <p ng-if="!booked">
+            Book
+        </p>
+    </button>
 </div>

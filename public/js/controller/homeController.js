@@ -4,9 +4,11 @@ homeController.$inject = ['$scope', 'GAuth', 'GApi', '$location', '$rootScope', 
 
 function homeController($scope, GAuth, GApi, $location, $rootScope, GData){
 
+
+    console.log($rootScope);
     var ifLogin = function() {
         $rootScope.currentUser = GData.getUserId();
-        console.log($rootScope);
+        $rootScope.company = $scope.company;
         $location.path("/meetingRoom");
     };
 

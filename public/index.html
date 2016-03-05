@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <base href="/"/>
-        <meta charset="utf-8">
-        <title>Meeting room control</title>
-        <link rel="stylesheet" href="libs/bulma/css/bulma.min.css" charset="utf-8">
-        <script src="libs/angular/angular.js"></script>
-        <script src="libs/moment/min/moment.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src="libs/angular-google-gapi/dist/angular-google-gapi.js"></script>
-        <script src="libs/angular-route/angular-route.js"></script>
-        <script src="libs/Bleeve/Bleeveapp.js" charset="utf-8"></script>
+<head>
+    <base href="/"/>
+    <meta charset="utf-8">
+    <title>Meeting room control</title>
+    <link rel="stylesheet" href="libs/bulma/css/bulma.min.css" charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" charset="utf-8">
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/moment/min/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="libs/angular-google-gapi/dist/angular-google-gapi.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/routes.js" charset="utf-8"></script>
+    <script src="js/services/roomService.js" charset="utf-8"></script>
+    <script src="js/directives/meetingRoomDirective.js" charset="utf-8"></script>
+    <script src="js/controller/homeController.js" charset="utf-8"></script>
+    <script src="js/controller/meetingRoomController.js" charset="utf-8"></script>
 
-    </head>
-    <body ng-app="Bleeveapp">
-        <header>
-            <nav>
-                <h1>Meeting room control</h1>
-            </nav>
-        </header>
-
-        <div ng-view>
+</head>
+<body ng-app="Bleeveapp">
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="title">
+                    Meeting Room Control
+                </h1>
+                <h2 class="subtitle">
+                    Bleeve
+                </h2>
+            </div>
         </div>
-    </body>
+    </section>
+
+    <div class="hero">
+        <div  class="hero-content">
+            <div ng-view class="container">
+
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>

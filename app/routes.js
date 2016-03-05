@@ -16,6 +16,7 @@ module.exports = function(app){
         room.name = req.body.name;
         room.company = req.body.company;
         room.eventId = req.body.eventId;
+        room.calendarId = req.body.calendarId;
         room.save(function (err, room) {
             if(err){
                 res.json({success: false, message: err});
@@ -25,9 +26,21 @@ module.exports = function(app){
         })
     });
 
-    app.put('/room/:id',function (req, res) {
-        Room.findById(req.params.id, function (err, room) {
+    app.put('/room',function (req, res) {
+        Room.find({name: req.body.name} , function (err, room) {
+            room.name = req.body.name;
             room.company = req.body.company;
+            room.eventId = req.body.eventId;
+            room.calendarId = req.body.calendarId;
+            
+            room.save(function (err, room) {
+                if(err){
+                    res.json({success: false, message: err});
+                    return;
+                }
+                res.json(room);
+            })
+
         })
     })
 

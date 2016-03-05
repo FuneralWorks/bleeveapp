@@ -1,0 +1,24 @@
+{
+  "name": "bleeve",
+  "authors": [
+    "FuneralWorks <nathan.calvarin@gmail.com>"
+  ],
+  "description": "",
+  "main": "server.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "moment": "^2.11.2",
+    "angular-google-gapi": "1.0.0-beta.1"
+  }
+}

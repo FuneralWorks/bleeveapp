@@ -11,6 +11,7 @@ app.use(bodyParser.json({limit: '50mb', type : 'application/json'}));
 app.use(bodyParser.urlencoded({limit : '50mb',extended : true}));
 app.use(express.static(__dirname+ "/public"));
 
-require('./app/routes'){app};
+require('./app/routes')(app);
+
 app.listen(port);
 console.log("Server started");

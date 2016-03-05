@@ -1,16 +1,22 @@
-angular.module('Bleeveapp', ['angular-google-gapi', 'ngRoute']).config(routeConfig);
+angular.module('Bleeveapp', ['angular-google-gapi', 'ngRoute'])
+    .run(googleAuth);
+googleAuth.$inject= ['GAuth', 'GApi', 'GData','$rootScope', '$window', '$location'];
 
-routeConfig.$inject = ['$routeProvider', '$locationProvider'];
+function googleAuth(GAuth, GApi, GData, $rootScope, $window, $location) {
+    $rootScope.gdata = GData;
+    var CLIENT = '446295244320-46f84na6k5ba6lkkaav7mgahq4lfkarl.apps.googleusercontent.com';
+    var BASE;
+    if($window.location.hostname == 'localhost') {
+        BASE = '//localhost:8080/_ah/api';
+    } else {
+        BASE = 'https://cloud-endpoints-gae.appspot.com/_ah/api';
+    }
 
-function routeConfig($routeProvider, $locationProvider) {
-    $routeProvider.when('/', {
-        templateUrl: 'views/home.html',
-        controller: 'homeController'
-    })
-    .when('/meetingRoom',{
-        templateUrl: 'views/meetingRoom.html',
-        controller: 'meetingRoomController'
-    });
+    BASE = 'https://cloud-endpoints-gae.appspot.com/_ah/api';
 
-    $locationProvider.html5mode(true);
+    GApi.load('myContactApi', 'v1', BASE);
+    GApi.load('calendar', 'v3');
+    GAuth.setClient(CLIENT);
+    GAuth.setScope('https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/calendar');
+
 }
